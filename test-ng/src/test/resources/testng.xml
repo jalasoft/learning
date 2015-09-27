@@ -1,0 +1,28 @@
+<suite name="Moje prvni sjuta">
+
+    <test name="No proste test">
+        <parameter name="street" value="Delnicka"/>
+
+        <listeners>
+            <listener class-name="cz.jalasoft.test.listener.MyTestsListener"/>
+        </listeners>
+
+        <groups>
+            <run>
+                <include name="funkcni"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="cz.jalasoft.test.MyFirstTest"/>
+            <class name="cz.jalasoft.test.MySecondTest"/>
+        </classes>
+    </test>
+
+    <!--<test name="Dzej juniti">
+        <classes>
+            <class name="cz.jalasoft.test.MyJunit" junit="true"/>
+        </classes>
+    </test>-->
+
+</suite>
