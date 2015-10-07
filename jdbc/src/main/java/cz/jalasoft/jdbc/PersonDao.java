@@ -1,5 +1,6 @@
 package cz.jalasoft.jdbc;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Collection;
 
@@ -12,4 +13,6 @@ public interface PersonDao {
     Collection<Person> allPersons() throws SQLException;
 
     void insertPerson(Person person) throws SQLException;
+
+    void printMetadata() throws SQLException, IOException;
 }

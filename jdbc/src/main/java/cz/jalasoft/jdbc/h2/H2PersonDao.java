@@ -2,6 +2,7 @@ package cz.jalasoft.jdbc.h2;
 
 import cz.jalasoft.jdbc.Person;
 import cz.jalasoft.jdbc.PersonDao;
+import cz.jalasoft.jdbc.info.DatabaseInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -82,5 +83,9 @@ public final class H2PersonDao implements PersonDao {
 
     private Connection connection() throws SQLException {
         return DriverManager.getConnection(url);
+    }
+
+    public void printMetadata() throws SQLException, IOException {
+        System.out.println(new DatabaseInfo(connection()).getInfo());
     }
 }

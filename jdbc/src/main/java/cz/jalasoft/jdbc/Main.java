@@ -1,7 +1,5 @@
 package cz.jalasoft.jdbc;
 
-import com.typesafe.config.Config;
-import com.typesafe.config.ConfigFactory;
 import cz.jalasoft.jdbc.h2.H2PersonDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,6 +47,8 @@ public class Main {
 
     private static void operateOnDB(String location) throws IOException, SQLException {
         PersonDao dao = new H2PersonDao(location);
+
+        dao.printMetadata();
 
         dao.insertPerson(person("Honza", "Lastovicka", "lastovicka@avast.com"));
         dao.insertPerson(person("Miska", "Lastovickova", "miska@gmail.com"));

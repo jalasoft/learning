@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cz.jalasoft.hibernate.kopr.bean">
+      <class name="Shovel" table="SHOVEL">
+          <id name="id" column="ID">
+              <generator class="native"/>
+          </id>
+          <property name="name" column="NAME" not-null="true" type="java.lang.String"/>
+          <property name="email" column="EMAIL" not-null="true"/>
+      </class>
+
+      <class name="MotivationIndex">
+          <id name="value" column="ID"/>
+          <property name="description" column="DESCRIPTION"/>
+      </class>
+
+    <class name="DailyMotivation" table="DAILY_MOTIVATION">
+        <id name="id" column="ID"/>
+        <property name="date" column="DATE" type="java.time.LocalDate" not-null="true"/>
+        <many-to-one name="index" column="INDEX" not-null="true"/>
+        <many-to-one name="shovel" column="SHOWEL_ID" class="Shovel" not-null="true" unique="true"/>
+    </class>
+
+</hibernate-mapping>
