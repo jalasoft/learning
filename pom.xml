@@ -12,6 +12,7 @@
         <module>test-ng</module>
         <module>jdbc</module>
         <module>hibernate</module>
+        <module>spring-ws</module>
     </modules>
 
     <packaging>pom</packaging>

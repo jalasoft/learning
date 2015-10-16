@@ -1,6 +1,6 @@
 package cz.jalasoft.hibernate.kopr.bean;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * @author Honza Lastovicka (lastovicka@avast.com)
@@ -10,7 +10,7 @@ public final class DailyMotivation {
 
     private int id;
     private Shovel shovel;
-    private LocalDate date;
+    private Date day;
     private MotivationIndex index;
 
     public int getId() {
@@ -29,12 +29,12 @@ public final class DailyMotivation {
         this.shovel = shovel;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Date getDay() {
+        return day;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setDay(Date day) {
+        this.day = day;
     }
 
     public MotivationIndex getIndex() {

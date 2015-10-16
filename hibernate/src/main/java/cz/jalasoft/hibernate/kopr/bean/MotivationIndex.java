@@ -6,23 +6,31 @@ package cz.jalasoft.hibernate.kopr.bean;
  */
 public class MotivationIndex {
 
-    private String description;
+    private Integer id;
     private int value;
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    private String name;
 
     public int getValue() {
         return value;
     }
-
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -30,7 +38,7 @@ public class MotivationIndex {
         return new StringBuilder("MotivationIndex[")
                 .append(getValue())
                 .append(": ")
-                .append(getDescription())
+                .append(getName())
                 .append("]")
                 .toString();
     }
