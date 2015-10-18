@@ -13,6 +13,7 @@
         <module>jdbc</module>
         <module>hibernate</module>
         <module>spring-ws</module>
+        <module>spring-web</module>
     </modules>
 
     <packaging>pom</packaging>

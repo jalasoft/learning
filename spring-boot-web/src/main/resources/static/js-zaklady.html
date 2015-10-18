@@ -1,0 +1,44 @@
+<html>
+    <body>
+
+    Zadej tvuj vek:
+    <input type="text" id="vek"/>
+    <button type="button" onclick="kliknuti()">Stiskni</button>
+
+
+    <div id="cil"/>
+
+    <script>
+        var pocet = 1;
+
+        function kliknuti() {
+            console.log("klikls na tlacitko");
+            var text = document.getElementById("vek").value;
+
+            var vek = parseInt(text);
+
+            if (isNaN(vek) || vek == 0) {
+                console.log("Zadal jsi to blbe");
+                tiskni("Nezadal jsi cislo");
+                return;
+            }
+
+            if (vek < 0) {
+                tiskni("Zadals blbe vek: " + vek);
+                return;
+            }
+            tiskni("Graluce, je ti " + vek + " a navic si to zkusil po " + pocet + ".");
+            pocet++;
+        }
+
+        function tiskni(co) {
+            var div = document.getElementById("cil");
+
+            if (co == undefined) {
+                co = "nedefinovano";
+            }
+            div.innerHTML = co;
+        }
+    </script>
+    </body>
+</html>

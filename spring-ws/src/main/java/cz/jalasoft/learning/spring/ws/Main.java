@@ -1,5 +1,6 @@
 package cz.jalasoft.learning.spring.ws;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,9 +21,15 @@ import java.io.PrintStream;
 @SpringBootApplication
 public class Main {
 
+    @Value("${greeting}")
+    private String greeting;
+
+    @Value("${zprava}")
+    private String message;
+
     @RequestMapping(value = "/hello/{name}", method = RequestMethod.GET)
     public String hello(@PathVariable("name") String name) {
-        return "hello <b>" + name + "</b>";
+        return greeting + " <b>" + name + "</b>: zprava dne je " + message;
     }
 
     public static void main(String[] args) {
