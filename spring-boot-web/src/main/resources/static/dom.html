@@ -1,0 +1,100 @@
+<html>
+    <body>
+    <div>
+        <h1>Nadpis</h1>
+    </div>
+    <div>
+        <p>
+            Popis neceho co chci popsat
+        </p>
+        <form name="form1">
+            <header>Hlavicka</header>
+            <label>Jmeno</label>
+            <input type="text"/><br>
+            <label>Vek</label>
+            <input type="number" min="10", max="100"/>
+            <button type="button">Odeslat</button>
+        </form>
+    </div>
+
+    <div id="output"/>
+    <button id="analyze" type="button">Analyzuj</button>
+
+
+    <script>
+        var Visitor = function() {
+            this.currentNode = document.createElement("ul");
+
+            this.onVisitLeaf = function(node) {
+                var li = document.createElement("li");
+                var text = document.createTextNode(this.getNodeType(node) + ": " + node.nodeName);
+                li.appendChild(text);
+                this.currentNode.appendChild(li);
+            }
+
+            this.onVisitComposite = function(node) {
+                var ul = document.createElement("ul");
+                this.currentNode.appendChild(ul);
+                this.currentNode = ul;
+
+                var text = document.createTextNode(this.getNodeType(node) + ": " + node.nodeName);
+                this.currentNode.appendChild(text);
+            }
+
+            this.onVisitEnd = function(node) {
+                this.currentNode = this.currentNode.parentNode;
+            }
+
+            this.getNodeType = function(node) {
+                switch(node.nodeType) {
+                    case 1:
+                        return "Element";
+
+                    case 2:
+                        return "Attribute";
+
+                    case 3:
+                        return "Text";
+
+                    case 8:
+                        return "Comment";
+
+                    default:
+                        return "Unknown";
+                }
+            }
+
+        };
+
+        var button = document.getElementById("analyze");
+        button.addEventListener("click", function() {
+            var text = "";
+            var body = document.body;
+
+            var visitor = new Visitor();
+
+            walkDOM(body, visitor);
+
+            document.getElementById("output").appendChild(visitor.currentNode);
+        });
+
+        function walkDOM(root, visitor) {
+
+            var children = root.childNodes;
+            if (children.length == 0) {
+                visitor.onVisitLeaf(root);
+                return;
+            }
+
+            visitor.onVisitComposite(root);
+            for(var i = 0; i< children.length; i++) {
+                var child = children[i];
+                walkDOM(child, visitor);
+            }
+
+            visitor.onVisitEnd(root);
+        }
+
+    </script>
+    </body>
+</html>

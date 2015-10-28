@@ -1,0 +1,58 @@
+<html>
+    <body>
+
+    <div id="output"/>
+    <div id="pole"></div>
+    <input type="text" id="text"/>
+    <button type="button" onclick="add(); update()">Pridej</button>
+    <button type="button" onclick="array.pop(); update()">Umaz</button>
+    <div id="summary"/>
+
+    <script>
+        var array = [ "Honza", "Vilem", "Jarmila"];
+        update();
+        /*
+        var text = "";
+
+        for (i=0; i<array.length; i++) {
+            text += array[i] + " ";
+        }
+
+        var objekt = {
+            name: "Honza",
+            surname: "Lastovicka",
+            vek: 32
+        };
+
+        text += "    ";
+
+        for(property in objekt) {
+            text = text + property + "=" + objekt[property] + ",";
+        }
+
+        var male = true;
+        var female = Boolean(false);
+
+        text += "Male: " + male + ", female: " + female + ".";
+
+        text += " typ booleanu: " + typeof male;
+
+        var div = document.getElementById("output");
+        div.innerHTML = text;
+        */
+        function update() {
+            document.getElementById("pole").innerHTML = array.toString();
+            document.getElementById("summary").innerHTML = array.join(":");
+        }
+
+        function add() {
+            var newItem = document.getElementById("text").value;
+            if (newItem.length == 0) {
+                window.alert("Zadej neco!!!!");
+                return;
+            }
+            array.push(newItem);
+        }
+    </script>
+    </body>
+</html>

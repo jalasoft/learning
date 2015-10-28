@@ -6,9 +6,21 @@
     <button type="button" onclick="kliknuti()">Stiskni</button>
 
 
-    <div id="cil"/>
+    <div id="cil"/><br/>
+    <div id="cas"/>
 
     <script>
+        dny = [ "Nedele", "Pondeli", "Utery", "Streda", "Ctvtek", "Patek", "Sobota"];
+        Date.prototype.den = function() {
+            return dny[this.getDay()];
+        }
+
+        var casDiv = document.getElementById("cas");
+        var time = new Date();
+        var getHoursMethod = Date.prototype.getHours();
+        var formatedTime = time.getHours() + ":" + time.getMinutes();
+        casDiv.innerHTML = "Prave je " + formatedTime + " - " + time.den();
+
         var pocet = 1;
 
         function kliknuti() {
@@ -38,6 +50,7 @@
                 co = "nedefinovano";
             }
             div.innerHTML = co;
+            div.style.color = "red";
         }
     </script>
     </body>

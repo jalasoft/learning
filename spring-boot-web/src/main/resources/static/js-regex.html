@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="text">Tak a toto je nejaky text ah234
+    </div>
+    <div id="output"/>
+    <input type="text" id="regex"/>
+    <button type="button" onclick="search()">Hledej</button>
+    <script>
+        function search() {
+            var text = document.getElementById("text").innerHTML;
+            var regex = RegExp(document.getElementById("regex").value);
+            var result = text.search(regex);
+
+            //window.alert(text.length);
+
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
