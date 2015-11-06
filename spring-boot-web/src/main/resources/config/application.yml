@@ -1,0 +1,13 @@
+server:
+  port: 8443
+
+honza:
+  value1: Ahojky
+
+---
+
+spring:
+  profiles: test
+
+server:
+  port: 8123

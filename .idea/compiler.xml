@@ -52,12 +52,20 @@
         <processorPath useClasspath="true" />
         <module name="spring-web" />
       </profile>
+      <profile default="false" name="Annotation profile for spring-jmx" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-jmx" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hibernate" target="1.8" />
       <module name="jmx" target="1.8" />
       <module name="learning" target="1.8" />
       <module name="spring-boot-web" target="1.8" />
+      <module name="spring-jmx" target="1.8" />
       <module name="spring-web" target="1.8" />
       <module name="spring-ws" target="1.8" />
       <module name="test-ng" target="1.8" />
