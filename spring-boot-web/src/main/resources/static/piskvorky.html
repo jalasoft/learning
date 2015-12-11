@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <style>
+            form {
+                width: 300px;
+                margin: auto;
+                border-top: 4px solid gray;
+                border-bottom: 4px solid gray;
+                background-color: aliceblue;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                position: relative;
+                top: 100px;
+            }
+            form {
+                font-family: Arial;
+                transition: display 2s;
+            }
+            form ul {
+                list-style: none;
+                padding: 0px;
+            }
+            form label {
+                display: inline-block;
+                width: 60px;
+                text-align: right;
+                margin-right: 15px;
+            }
+
+            #game {
+                margin: auto;
+                width: 600px;
+            }
+
+            #game table, #game tr, #game td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            #game td {
+                width: 20px;
+                height: 20px;
+            }
+        </style>
+        <script src="NoughtsFactory.js"></script>
+    </head>
+    <body>
+        <form>
+            <p>Select sizes of the game.</p>
+            <ul>
+                <li>
+                    <label for="width">width:</label>
+                    <select id="width">
+                        <option>5</option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>50</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="height">height:</label>
+                    <select id="height">
+                        <option>5</option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>50</option>
+                    </select>
+                </li>
+            </ul>
+            <button type="button" onclick="renderGame()">Start</button>
+        </form>
+        <div id="game"></div>
+    </body>
+</html>

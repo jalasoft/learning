@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8"/>
+
+        <style>
+            form {
+                width: 20%;
+                min-width: 250px;
+                margin: auto;
+                margin-top: 150px;
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 3px;
+                background-color: #fcfcfc;
+            }
+
+            fieldset {
+                border: none;
+                margin: 0px;
+                padding: 0px;
+            }
+
+            fieldset ul {
+                list-style: none;
+                margin: 0px;
+                padding: 0px;
+            }
+
+            label {
+                width: 75px;
+                display: inline-block;
+                text-align: right;
+                margin-right: 10px;
+            }
+
+
+
+            /*
+            label.gender ul {
+                display: inline;
+            }
+            */
+            fieldset.person li + li {
+                padding-top: 7px;
+            }
+
+            fieldset.gender {
+                margin-top: 10px;;
+            }
+
+            fieldset.gender ul li {
+                display: inline;
+            }
+
+            fieldset.language {
+                border-top: 1px solid black;
+                margin-top: 10px;
+                padding-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid black;
+            }
+
+            fieldset.language ul.col1 {
+                float: right;
+            }
+
+           /* fieldset.language ul.col2 {
+                clear: both;
+            }*/
+            #menu ul {
+                list-style: none;
+            }
+
+            #menu li {
+                background-color: yellow;
+            }
+
+            #menu li:hover {
+                background-color: red;
+                animation-name: prechod;
+                animation-duration: 2s;
+            }
+
+            @keyframes prechod {
+                from {
+                    background-color: yellow;
+                }
+                to {
+                    background-color: red;
+                }
+            }
+
+            #menu li:hover {
+                cursor: pointer;
+
+            }
+
+            #menu ul ul {
+                display: none;
+            }
+            #menu li:hover > ul {
+                display: block;
+                /*animation-name: prechod;
+                animation-duration: 1s;*/
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <fieldset class="person">
+                <!--<legend>Personal name</legend>-->
+                <ul>
+                    <li>
+                        <label for="name">Name</label>
+                        <input id="name" type="text" required="required" maxlength="15" placeholder="Your name"/>
+                    </li>
+                    <li>
+                        <label for="surname">Surname</label>
+                        <input id="surname" type="text" required="required" maxlength="25" placeholder="Your surname"/>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="gender">
+                <!--<legend>gender</legend>-->
+                <ul>
+                    <li>
+                        <label for="male">Male</label>
+                        <input id="male" type="radio" name="gender" value="male"/>
+                    </li>
+                    <li>
+                        <label for="female">Female</label>
+                        <input id="female" type="radio" name="gender" value="female"/>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="language">
+                <!--<legend>Language</legend>-->
+
+                <ul class="col1">
+                    <li>
+                        <label for="czech">Czech</label>
+                        <input id="czech" type="checkbox" value="czech"/>
+                    </li>
+                    <li>
+                        <label for="english">English</label>
+                        <input id="english" type="checkbox" value="english"/>
+                    </li>
+                    <li>
+                        <label for="german">German</label>
+                        <input id="german" type="checkbox" value="german"/>
+                    </li>
+                </ul>
+                <ul class="col2">
+                    <li>
+                        <label for="italian">Italian</label>
+                        <input id="italian" type="checkbox" value="italian"/>
+                    </li>
+                    <li>
+                        <label for="polish">Polish</label>
+                        <input id="polish" type="checkbox" value="polish"/>
+                    </li>
+                    <li>
+                        <label for="spanish">Spanish</label>
+                        <input id="spanish" type="checkbox" value="spanish"/>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <button id="button" type="button">Ok</button>
+        </form>
+
+        <div id="menu">
+        <ul>
+            <li>Menu
+                <ul>
+                    <li>polozka1</li>
+                    <li>
+                        polozka2
+                        <ul>
+                            <li>polizka2.0</li>
+                            <li>polozka2.1</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+    </body>
+</html>

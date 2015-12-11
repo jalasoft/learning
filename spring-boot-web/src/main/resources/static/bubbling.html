@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTL-8"/>
+        <style>
+            #t {
+                background-color: red;
+                width: 500px;
+                height: 500px;
+                position: absolute;
+                top: 100px;
+                left: 200px;
+            }
+            #u {
+                background-color: blue;
+                width: 400px;
+                height: 400px;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+            #v {
+                background-color: yellow;
+                width: 300px;
+                height: 300px;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="t">
+            <div id="u">
+                <div id="v">
+                    <a href="https://www.seznam.cz">ODKAZ</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            var t = document.querySelector("#t");
+            var u = document.querySelector("#u");
+            var v = document.querySelector("#v");
+
+            t.addEventListener("click", e => console.log("T clicked"), false);
+            u.addEventListener("click", e => {
+                console.log("U clicked");
+                //e.stopPropagation();
+            }, false);
+            v.addEventListener("click", e => console.log("V clicked"), false);
+
+            t.addEventListener("click", e => {
+                console.log("T capturing");
+                e.preventDefault();
+            }, true);
+            u.addEventListener("click", e => console.log("U capturing", true);
+            v.addEventListener("click", e => console.log("V capturing"), true);
+        </script>
+    </body>
+</html>

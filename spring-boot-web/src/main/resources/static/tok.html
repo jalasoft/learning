@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8"/>
+        <style>
+            span {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 30px;
+                display: inline-block;
+            }
+
+            span:nth-child(2n) {
+                background-color: aqua;
+            }
+            span:nth-child(2n+1) {
+                background-color: azure;
+            }
+
+            #flow {
+                height: 70px;
+                overflow: auto;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="flow"/>
+        <script>
+            var factory = function(text, parent) {
+                var element = document.createElement("span");
+                element.innerHTML = text;
+                parent.appendChild(element);
+            }
+
+            var root = document.getElementById("flow");
+            for(var i =0;i < 100; i++) {
+                factory("Ahoj cislo " + i, root);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8"/>
+        <style>
+            table {
+                position: absolute;
+                top: 33%;
+                left: 33%;
+            }
+            th, td, table {
+                border: 1px solid black;
+                border-collapse: collapse;
+                margin: 0px;
+                padding: 0px;
+            }
+            th {
+                width: 100px;
+            }
+            th, td {
+                text-align: center;
+            }
+            td {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Honzales</td>
+                    <td>Lastovicka</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>Misule</td>
+                    <td>Lastovickova</td>
+                    <td>29</td>
+                </tr>
+                <tr>
+                    <td>Vlasta</td>
+                    <td>Melichar</td>
+                    <td>31</td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="analyzeSelection()">Analyze</button>
+        <div id="result"/>
+        <script>
+            var analyzeSelection = function() {
+                var table = document.querySelector("table");
+                var walker = document.createTreeWalker(table, NodeFilter.SHOW_ELEMENT);
+                var cells = [];
+
+                while(walker.nextNode()) {
+                    var node = walker.currentNode;
+                    console.log("Analyzuji uzel: " + node.nodeName);
+                    if (node.nodeName === "TD" && node.style.backgroundColor === "red") {
+                        cells.push(node);
+                    }
+                }
+
+                var ul = document.createElement("ul");
+                cells.forEach(node => {
+                    var li = document.createElement("li");
+                    var text = document.createTextNode(node.innerHTML);
+                    li.appendChild(text);
+                    ul.appendChild(li);
+                });
+
+                var result = document.querySelector("#result");
+
+                result.appendChild(ul);
+            }
+
+            var toggleColor = function(node) {
+                var currentColor = node.style.backgroundColor;
+                var newColor = currentColor === "red" ? newColor = "white" : newColor = "red";
+                node.style.backgroundColor = newColor;
+            };
+
+            var clickHandler = function(event) {
+              var target = event.target;
+              while(target != null) {
+                  if (target.nodeName === "TD") {
+                      toggleColor(target);
+                  }
+                  target = target.parentNode;
+              }
+
+            };
+
+            var table = document.querySelector("table");
+            table.addEventListener("click", clickHandler, false);
+        </script>
+    </body>
+</html>
