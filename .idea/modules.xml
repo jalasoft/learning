@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/hibernate/hibernate.iml" filepath="$PROJECT_DIR$/hibernate/hibernate.iml" />
       <module fileurl="file://$PROJECT_DIR$/jmx/jmx.iml" filepath="$PROJECT_DIR$/jmx/jmx.iml" />
       <module fileurl="file://$PROJECT_DIR$/learning.iml" filepath="$PROJECT_DIR$/learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-extjs/spring-boot-extjs.iml" filepath="$PROJECT_DIR$/spring-boot-extjs/spring-boot-extjs.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-web/spring-boot-web.iml" filepath="$PROJECT_DIR$/spring-boot-web/spring-boot-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-jmx/spring-jmx.iml" filepath="$PROJECT_DIR$/spring-jmx/spring-jmx.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-ws/spring-ws.iml" filepath="$PROJECT_DIR$/spring-ws/spring-ws.iml" />

@@ -15,6 +15,7 @@
         <module>spring-ws</module>
         <module>spring-web</module>
         <module>spring-jmx</module>
+        <module>spring-boot-extjs</module>
     </modules>
 
     <packaging>pom</packaging>
