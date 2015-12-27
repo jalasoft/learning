@@ -46,10 +46,16 @@
      * The toolkit to use. Select either "classic" or "modern".
      */
     
+    "toolkit": "classic",
+    
     
     /**
      * The name of the theme for this application.
      */
+    
+    
+    "theme": "theme-triton",
+    
     
     /**
      * The list of required packages (with optional versions; default is "latest").
@@ -98,6 +104,8 @@
          *
          */
          
+        // "save": "sass/save.scss",
+        
         /**
          * Comma-separated list of files or folders containing extra Sass. These
          * files are automatically included in the Sass compilation. By default this
@@ -369,8 +377,6 @@
     "bootstrap": {
         "base": "${app.dir}",
         
-        "manifest": "${build.id}.json",
-        
         "microloader": "bootstrap.js",
         "css": "bootstrap.css"
     },
@@ -418,15 +424,8 @@
     
     "output": {
         "base": "${workspace.build.dir}/${build.environment}/${app.name}",
-        "page": "index.html",
-        "manifest": "${build.id}.json",
-        "js": "${build.id}/app.js",
         "appCache": {
             "enable": false
-        },
-        "resources": {
-            "path": "${build.id}/resources",
-            "shared": "resources"
         }
     },
     
@@ -449,7 +448,7 @@
     
     "cache": {
         "enable": false,
-        "deltas": "${build.id}/deltas"
+        "deltas": true
     },
     
 
@@ -507,7 +506,7 @@
      * deltas between updates.
      */
     
-    "archivePath": "archive/${build.id}",
+    "archivePath": "archive",
     
 
 
@@ -554,32 +553,10 @@
      *
      */
     
-    "builds": {
-        "classic": {
-            "toolkit": "classic",
-            
-            "theme": "theme-triton",
-            
-            "sass": {
-                // "save": "classic/sass/save.scss"
-            }
-        },
-
-        "modern": {
-            "toolkit": "modern",
-            
-            "theme": "theme-triton",
-            
-            "sass": {
-                // "save": "modern/sass/save.scss"
-            }
-        }
-    },
-    
 
     /**
      * Uniquely generated id for this application, used as prefix for localStorage keys.
      * Normally you should never change this value.
      */
-    "id": "c4d15515-bec2-4b49-861f-8bb7b8392224"
+    "id": "a3829ded-93f2-41d1-b7ba-cf8d415d07ee"
 }

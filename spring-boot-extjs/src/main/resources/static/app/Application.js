@@ -13,8 +13,7 @@ Ext.define('MyApp.Application', {
     ],
     
     launch: function () {
-        console.log("Tak jsem to nastartoval");
-        Ext.Msg.confirm("Pozdrav", "Ahoj Honzo!!!!", function(ch) {});
+        // TODO - Launch the application
     },
 
     onAppUpdate: function () {
